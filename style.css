@@ -12,7 +12,7 @@ body {
 .container.top,
 .container.bottom {
   height: 20px;
-  border: 2px solid MediumVioletRed;
+  /* border: 2px solid MediumVioletRed; */
 }
 
 .main {
@@ -46,7 +46,7 @@ body {
 .numbers,
 .operators {
   height: 90%;
-  border: 2px solid MediumVioletRed;
+  /* border: 2px solid MediumVioletRed; */
 }
 
 .numbers.container,
