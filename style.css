@@ -37,12 +37,13 @@ body {
 }
 
 .operations.display {
-  height: 100%;
+  height: 90%;
   width: 88%;
   /* margin:  */
   border: 2px solid MediumVioletRed;
   font-size: 24px;
   font-weight: 900;
+  text-align: right;
 }
 
 .input.keys {
