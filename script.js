@@ -59,13 +59,23 @@ function btnClick(event) {
   }
   if (operatorArray.includes(event.target.id)) {
     console.log("[btnClick] This is an operator");
+    // console.log("[btnClick] This is an operator");
     // First function to test, 'clear' button
     if (event.target.id == "clear") {
       displayArea.textContent = "";
     } else {
+      arithmeticArray.push(numberStr);
+      numberStr = "";
+      let tmpChar = document.querySelector(`#${event.target.id}`).textContent;
+      if (event.target.id == "division") {
+        arithmeticArray.push("/");
+      } else {
+        arithmeticArray.push(tmpChar);
+      }
       updateDisplayArea(event.target.id);
     }
   }
+  console.log("[btnClick] arithmeticArray: " + arithmeticArray);
 }
 
 const numberArray = [
