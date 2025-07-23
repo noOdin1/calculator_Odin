@@ -53,19 +53,23 @@ function clearDisplay() {
   displayArea.textContent = "";
 }
 
+function clearCalculationMemory() {
+  arithmeticArray = [];
+  numberStr = "";
+}
+
 function arithmeticOperators(elemId) {
   if (elemId == "clear") {
     // user choose to 'clear'
     displayArea.textContent = "";
-    arithmeticArray = [];
-    numberStr = "";
+    clearCalculationMemory();
   } else if (elemId == "equals") {
     // user choose to end the input
     arithmeticArray.push(numberStr);
     numberStr = "";
     console.log("[btnClick] arithmeticArray: " + arithmeticArray);
     displayText(operate(arithmeticArray));
-    arithmeticArray = [];
+    clearCalculationMemory();
   } else {
     arithmeticArray.push(numberStr);
     numberStr = "";
