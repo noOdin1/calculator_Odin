@@ -30,7 +30,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: auto;
-  border: 2px solid MediumVioletRed;
+  /* border: 2px solid MediumVioletRed; */
   border-radius: 5px;
   justify-content: center;
   align-items: center;
@@ -40,10 +40,12 @@ body {
   height: 90%;
   width: 88%;
   /* margin:  */
-  border: 2px solid MediumVioletRed;
+  border: 1px solid Gainsboro;
   font-size: 24px;
   font-weight: 900;
   text-align: right;
+  background: LightGray;
+  box-shadow: 5px 5px 5px Silver;
 }
 
 .operations.display p {
