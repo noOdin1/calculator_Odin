@@ -87,6 +87,9 @@ function btnClick(event) {
   // I find that using the classList would sometimes get a empty '' string
   // on the console. This might cause problems later on.
   if (numberArray.includes(event.target.id)) {
+    if (numberStr == 0 && arithmeticArray.length == 0) {
+      clearDisplay();
+    }
     let tmpChar = document.querySelector(`#${event.target.id}`).textContent;
     numberStr += tmpChar;
     updateDisplayArea(event.target.id);
