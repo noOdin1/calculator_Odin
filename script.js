@@ -83,6 +83,13 @@ function arithmeticOperators(elemId) {
       // the arithmetic operation on the previous arithmetic result.
       arithmeticArray.push(numberStr);
     }
+    if (arithmeticArray.length == 3) {
+      // Part of the assignment behaviour requirement
+      let tmpResult = operate(arithmeticArray);
+      displayText(tmpResult);
+      arithmeticArray = [];
+      arithmeticArray.push(tmpResult);
+    }
     numberStr = "";
     let tmpChar = document.querySelector(`#${elemId}`).textContent;
     if (event.target.id == "division") {
