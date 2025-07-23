@@ -67,11 +67,22 @@ function arithmeticOperators(elemId) {
     // user choose to end the input
     arithmeticArray.push(numberStr);
     numberStr = "";
-    console.log("[btnClick] arithmeticArray: " + arithmeticArray);
-    displayText(operate(arithmeticArray));
+    // console.log("[btnClick] arithmeticArray: " + arithmeticArray);
+    let tmpResult = operate(arithmeticArray);
+    displayText(tmpResult);
+    // NOTE: Need to change this part.
+    // It is not appropriate to clear the calculation memory
+    // at this point because as per assignment requirements the
+    // product must be ready for the next arithmetic operation.
     clearCalculationMemory();
+    console.log("[arithmeticOperators] arithmeticArray: " + arithmeticArray);
+    arithmeticArray.push(tmpResult);
   } else {
-    arithmeticArray.push(numberStr);
+    if (numberStr != 0) {
+      // this is to avoid the situation where the user continues with
+      // the arithmetic operation on the previous arithmetic result.
+      arithmeticArray.push(numberStr);
+    }
     numberStr = "";
     let tmpChar = document.querySelector(`#${elemId}`).textContent;
     if (event.target.id == "division") {
@@ -88,6 +99,10 @@ function btnClick(event) {
   // on the console. This might cause problems later on.
   if (numberArray.includes(event.target.id)) {
     if (numberStr == 0 && arithmeticArray.length == 0) {
+      clearDisplay();
+    }
+    if (numberStr == 0 && arithmeticArray.length == 1) {
+      arithmeticArray = [];
       clearDisplay();
     }
     let tmpChar = document.querySelector(`#${event.target.id}`).textContent;
