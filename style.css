@@ -29,6 +29,7 @@ body {
   width: 90%;
   margin: auto;
   border: 2px solid MediumVioletRed;
+  border-radius: 5px;
 }
 
 .input.keys {
@@ -36,6 +37,7 @@ body {
   width: 90%;
   margin: auto;
   border: 2px solid MediumVioletRed;
+  border-radius: 5px;
   display: flex;
   flex-direction: row;
   align-items: center;
