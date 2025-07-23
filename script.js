@@ -53,6 +53,32 @@ function clearDisplay() {
   displayArea.textContent = "";
 }
 
+function arithmeticOperators(elemId) {
+  if (elemId == "clear") {
+    // user choose to 'clear'
+    displayArea.textContent = "";
+    arithmeticArray = [];
+    numberStr = "";
+  } else if (elemId == "equals") {
+    // user choose to end the input
+    arithmeticArray.push(numberStr);
+    numberStr = "";
+    console.log("[btnClick] arithmeticArray: " + arithmeticArray);
+    displayText(operate(arithmeticArray));
+    arithmeticArray = [];
+  } else {
+    arithmeticArray.push(numberStr);
+    numberStr = "";
+    let tmpChar = document.querySelector(`#${elemId}`).textContent;
+    if (event.target.id == "division") {
+      arithmeticArray.push("/");
+    } else {
+      arithmeticArray.push(tmpChar);
+    }
+    updateDisplayArea(elemId);
+  }
+}
+
 function btnClick(event) {
   // I find that using the classList would sometimes get a empty '' string
   // on the console. This might cause problems later on.
@@ -68,27 +94,29 @@ function btnClick(event) {
     // console.log("[btnClick] numberStr: " + numberStr);
   }
   if (operatorArray.includes(event.target.id)) {
-    // console.log("[btnClick] This is an operator");
-    // First function to test, 'clear' button
-    if (event.target.id == "clear") {
-      displayArea.textContent = "";
-      arithmeticArray = [];
-    } else if (event.target.id == "equals") {
-      arithmeticArray.push(numberStr);
-      numberStr = "";
-      console.log("[btnClick] arithmeticArray: " + arithmeticArray);
-      operate(arithmeticArray);
-    } else {
-      arithmeticArray.push(numberStr);
-      numberStr = "";
-      let tmpChar = document.querySelector(`#${event.target.id}`).textContent;
-      if (event.target.id == "division") {
-        arithmeticArray.push("/");
-      } else {
-        arithmeticArray.push(tmpChar);
-      }
-      updateDisplayArea(event.target.id);
-    }
+    arithmeticOperators(event.target.id);
+    // // console.log("[btnClick] This is an operator");
+    // // First function to test, 'clear' button
+    // if (event.target.id == "clear") {
+    //   displayArea.textContent = "";
+    //   arithmeticArray = [];
+    // } else if (event.target.id == "equals") {
+    //   arithmeticArray.push(numberStr);
+    //   numberStr = "";
+    //   console.log("[btnClick] arithmeticArray: " + arithmeticArray);
+    //   displayText(operate(arithmeticArray));
+    //   arithmeticArray = [];
+    // } else {
+    //   arithmeticArray.push(numberStr);
+    //   numberStr = "";
+    //   let tmpChar = document.querySelector(`#${event.target.id}`).textContent;
+    //   if (event.target.id == "division") {
+    //     arithmeticArray.push("/");
+    //   } else {
+    //     arithmeticArray.push(tmpChar);
+    //   }
+    //   updateDisplayArea(event.target.id);
+    // }
   }
   console.log("[btnClick] arithmeticArray: " + arithmeticArray);
 }
