@@ -65,6 +65,11 @@ const operatorArray = [
   "percentage",
   "squareRoot",
 ];
+let numberStr = "";
+let arithmeticOp = "";
+// let numberStr = "";
+let arithmeticArray = [];
+
 const displayArea = document.querySelector(".operations");
 let docButtons = document.querySelectorAll("button");
 docButtons.forEach((btn) => btn.addEventListener("click", btnClick));
