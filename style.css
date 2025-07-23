@@ -46,6 +46,10 @@ body {
   text-align: right;
 }
 
+.operations.display p {
+  text-align: right;
+}
+
 .input.keys {
   height: 70%;
   width: 90%;
