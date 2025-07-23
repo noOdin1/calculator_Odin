@@ -40,6 +40,10 @@ function operate(eqArray) {
   return;
 }
 
+function clearDisplay() {
+  displayArea.textContent = "";
+}
+
 function btnClick(event) {
   // I find that using the classList would sometimes get a empty '' string
   // on the console. This might cause problems later on.
