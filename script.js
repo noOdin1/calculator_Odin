@@ -4,6 +4,10 @@ function updateDisplayArea(displayStr) {
   displayArea.textContent += btnTxt.textContent;
 }
 
+function displayText(strToDisplay) {
+  displayArea.textContent = strToDisplay;
+}
+
 function add(num1, num2) {
   return num1 + num2;
 }
