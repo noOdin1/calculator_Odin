@@ -43,9 +43,6 @@ function operate(eqArray) {
 function btnClick(event) {
   // I find that using the classList would sometimes get a empty '' string
   // on the console. This might cause problems later on.
-  let numberStr = "";
-
-  console.log("[btnClick] event.target.id: " + event.target.id);
   // console.log("[btnClick] event.target.id: " + event.target.id);
   if (numberArray.includes(event.target.id)) {
     let tmpChar = document.querySelector(`#${event.target.id}`).textContent;
@@ -58,11 +55,16 @@ function btnClick(event) {
     // console.log("[btnClick] numberStr: " + numberStr);
   }
   if (operatorArray.includes(event.target.id)) {
-    console.log("[btnClick] This is an operator");
     // console.log("[btnClick] This is an operator");
     // First function to test, 'clear' button
     if (event.target.id == "clear") {
       displayArea.textContent = "";
+      arithmeticArray = [];
+    } else if (event.target.id == "equals") {
+      arithmeticArray.push(numberStr);
+      numberStr = "";
+      console.log("[btnClick] arithmeticArray: " + arithmeticArray);
+      operate(arithmeticArray);
     } else {
       arithmeticArray.push(numberStr);
       numberStr = "";
