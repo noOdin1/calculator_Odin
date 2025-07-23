@@ -21,23 +21,28 @@ function divide(num1, num2) {
 }
 
 function operate(eqArray) {
+  let num = 0;
   switch (eqArray[1]) {
     case "+":
       console.log("[operate] Sum of 2 numbers");
+      num = add(eqArray[0], eqArray[2]);
       break;
     case "-":
       console.log("[operate] 1st number minus 2nd number");
+      num = substract(eqArray[0], eqArray[2]);
       break;
     case "x":
       console.log("[operate] 1st number multiply by 2nd number");
+      num = multiplication(eqArray[0], eqArray[2]);
       break;
     case "/":
       console.log("[operate] 1st number divide by 2nd number");
+      num = divide(eqArray[0], eqArray[2]);
       break;
     default:
   }
 
-  return;
+  return num;
 }
 
 function clearDisplay() {
