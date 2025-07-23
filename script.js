@@ -7,6 +7,11 @@ function btnClick(event) {
   }
   if (operatorArray.includes(event.target.id)) {
     console.log("[btnClick] This is an operator");
+    // First function to test, 'clear' button
+    if (event.target.id == "clear") {
+      let displayArea = document.querySelector(".operations");
+      displayArea.textContent = "";
+    }
   }
 }
 
