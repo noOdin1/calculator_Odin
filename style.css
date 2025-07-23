@@ -80,7 +80,7 @@ body {
   display: flex;
   flex-direction: row;
   height: 90%;
-  border: 2px solid MediumVioletRed;
+  /* border: 2px solid MediumVioletRed; */
   align-items: center;
   justify-content: center;
 }
