@@ -46,9 +46,16 @@ function btnClick(event) {
   let numberStr = "";
 
   console.log("[btnClick] event.target.id: " + event.target.id);
+  // console.log("[btnClick] event.target.id: " + event.target.id);
   if (numberArray.includes(event.target.id)) {
-    console.log("[btnClick] This is a number");
+    let tmpChar = document.querySelector(`#${event.target.id}`).textContent;
+    numberStr += tmpChar;
+    // numberStr += document.querySelector(`#${event.target.id}`).textContent;
+    // numberStr.concat(
+    //   document.querySelector(`#${event.target.id}`).textContent,
+    // );
     updateDisplayArea(event.target.id);
+    // console.log("[btnClick] numberStr: " + numberStr);
   }
   if (operatorArray.includes(event.target.id)) {
     console.log("[btnClick] This is an operator");
