@@ -4,8 +4,5 @@ function btnClick(event) {
   console.log("[btnClick] event.target.id: " + event.target.id);
 }
 
-let btns = document.querySelectorAll(".button");
-let docButtons = document.querySelectorAll("button");
-// btn.addEventListener("click", btnClick);
-btns.forEach((btn) => btn.addEventListener("click", btnClick));
+let btns.forEach((btn) => btn.addEventListener("click", btnClick));
 docButtons.forEach((btn) => btn.addEventListener("click", btnClick));
