@@ -86,41 +86,13 @@ function arithmeticOperators(elemId) {
 function btnClick(event) {
   // I find that using the classList would sometimes get a empty '' string
   // on the console. This might cause problems later on.
-  // console.log("[btnClick] event.target.id: " + event.target.id);
   if (numberArray.includes(event.target.id)) {
     let tmpChar = document.querySelector(`#${event.target.id}`).textContent;
     numberStr += tmpChar;
-    // numberStr += document.querySelector(`#${event.target.id}`).textContent;
-    // numberStr.concat(
-    //   document.querySelector(`#${event.target.id}`).textContent,
-    // );
     updateDisplayArea(event.target.id);
-    // console.log("[btnClick] numberStr: " + numberStr);
   }
   if (operatorArray.includes(event.target.id)) {
     arithmeticOperators(event.target.id);
-    // // console.log("[btnClick] This is an operator");
-    // // First function to test, 'clear' button
-    // if (event.target.id == "clear") {
-    //   displayArea.textContent = "";
-    //   arithmeticArray = [];
-    // } else if (event.target.id == "equals") {
-    //   arithmeticArray.push(numberStr);
-    //   numberStr = "";
-    //   console.log("[btnClick] arithmeticArray: " + arithmeticArray);
-    //   displayText(operate(arithmeticArray));
-    //   arithmeticArray = [];
-    // } else {
-    //   arithmeticArray.push(numberStr);
-    //   numberStr = "";
-    //   let tmpChar = document.querySelector(`#${event.target.id}`).textContent;
-    //   if (event.target.id == "division") {
-    //     arithmeticArray.push("/");
-    //   } else {
-    //     arithmeticArray.push(tmpChar);
-    //   }
-    //   updateDisplayArea(event.target.id);
-    // }
   }
   console.log("[btnClick] arithmeticArray: " + arithmeticArray);
 }
