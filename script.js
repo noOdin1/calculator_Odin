@@ -5,5 +5,7 @@ function btnClick(event) {
 }
 
 let btns = document.querySelectorAll(".button");
+let docButtons = document.querySelectorAll("button");
 // btn.addEventListener("click", btnClick);
 btns.forEach((btn) => btn.addEventListener("click", btnClick));
+docButtons.forEach((btn) => btn.addEventListener("click", btnClick));
