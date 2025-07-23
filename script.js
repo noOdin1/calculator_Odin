@@ -16,7 +16,7 @@ function multiplication(num1, num2) {
   return num1 * num2;
 }
 
-function divison(num1, num2) {
+function divide(num1, num2) {
   return num1 / num2;
 }
 
@@ -60,7 +60,7 @@ const operatorArray = [
   "plus",
   "minus",
   "multiplication",
-  "divison",
+  "division",
   "clear",
   "percentage",
   "squareRoot",
