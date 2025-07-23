@@ -9,19 +9,19 @@ function displayText(strToDisplay) {
 }
 
 function add(num1, num2) {
-  return num1 + num2;
+  return Number(num1) + Number(num2);
 }
 
 function substract(num1, num2) {
-  return num1 - num2;
+  return Number(num1) - Number(num2);
 }
 
 function multiplication(num1, num2) {
-  return num1 * num2;
+  return Number(num1) * Number(num2);
 }
 
 function divide(num1, num2) {
-  return num1 / num2;
+  return Number(num1) / Number(num2);
 }
 
 function operate(eqArray) {
