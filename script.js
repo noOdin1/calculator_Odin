@@ -20,6 +20,26 @@ function divide(num1, num2) {
   return num1 / num2;
 }
 
+function operate(eqArray) {
+  switch (eqArray[1]) {
+    case "+":
+      console.log("[operate] Sum of 2 numbers");
+      break;
+    case "-":
+      console.log("[operate] 1st number minus 2nd number");
+      break;
+    case "x":
+      console.log("[operate] 1st number multiply by 2nd number");
+      break;
+    case "/":
+      console.log("[operate] 1st number divide by 2nd number");
+      break;
+    default:
+  }
+
+  return;
+}
+
 function btnClick(event) {
   // I find that using the classList would sometimes get a empty '' string
   // on the console. This might cause problems later on.
