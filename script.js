@@ -28,19 +28,15 @@ function operate(eqArray) {
   let num = 0;
   switch (eqArray[1]) {
     case "+":
-      console.log("[operate] Sum of 2 numbers");
       num = add(eqArray[0], eqArray[2]);
       break;
     case "-":
-      console.log("[operate] 1st number minus 2nd number");
       num = substract(eqArray[0], eqArray[2]);
       break;
     case "x":
-      console.log("[operate] 1st number multiply by 2nd number");
       num = multiplication(eqArray[0], eqArray[2]);
       break;
     case "/":
-      console.log("[operate] 1st number divide by 2nd number");
       num = divide(eqArray[0], eqArray[2]);
       break;
     default:
@@ -106,12 +102,12 @@ function btnClick(event) {
   // on the console. This might cause problems later on.
   if (numberArray.includes(event.target.id)) {
     if (numberStr == "" && arithmeticArray.length == 0) {
-      displayArea.textContent = ""
+      displayArea.textContent = "";
       // clearDisplay();
     }
     if (numberStr == "" && arithmeticArray.length == 1) {
       arithmeticArray = [];
-      displayArea.textContent = ""
+      displayArea.textContent = "";
       // clearDisplay();
     }
     let tmpChar = document.querySelector(`#${event.target.id}`).textContent;
