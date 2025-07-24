@@ -168,6 +168,13 @@ function clickEntry(event) {
     calculationArray.push(inputObj[event.target.id]);
     calculationArray.push(inputObj[event.target.id]);
   } else {
+    if (operatorsVerb.includes(event.target.id)) {
+      if (result != 0 && calculationArray.length == 0) {
+        // this means that the user continued with the process with
+        // result from the previous calculation
+        calculationArray.push(result.toString().split());
+      }
+    }
     calculationArray.push(inputObj[event.target.id]);
     console.log(
       "[clickEntry] length of calculationArray: " + calculationArray.length,
