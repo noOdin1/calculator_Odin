@@ -124,30 +124,14 @@ function btnClick(event) {
   console.log("[btnClick] arithmeticArray: " + arithmeticArray);
 }
 
-const numberArray = [
-  "one",
-  "two",
-  "three",
-  "four",
-  "five",
-  "six",
-  "seven",
-  "eight",
-  "nine",
-  "zero",
-  "point",
-  "zeroZero",
-];
-const operatorArray = [
-  "equals",
-  "plus",
-  "minus",
-  "multiplication",
-  "division",
-  "clear",
-  "percentage",
-  "squareRoot",
-];
+function calculationProcess(calcArr) {
+  let index = 0;
+  operators.forEach((op) => {
+    index = calcArr.indexOf(op) == -1 ? index : calcArr.indexOf(op);
+    // console.log("[calculationProcess] index: " + index);
+  });
+  console.log("[calculationProcess] index: " + index);
+}
 
 function clickEntry(event) {
   // process restrictions first
