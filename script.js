@@ -172,7 +172,7 @@ function clickEntry(event) {
       if (result != 0 && calculationArray.length == 0) {
         // this means that the user continued with the process with
         // result from the previous calculation
-        calculationArray.push(result.toString().split());
+        calculationArray.push(result.toString().split(""));
       }
     }
     if (event.target.id == "point") {
