@@ -149,6 +149,9 @@ function clickEntry(event) {
   let evtObj = document.querySelector(`#${event.target.id}`);
   if (event.target.id == "clear") {
     calculationArray = []; // clear the calculation array
+    arg1 = [];
+    arg2 = [];
+    arithmeticSymbol = "";
     result = 0;
     return;
   }
@@ -172,6 +175,8 @@ function clickEntry(event) {
       if (result != 0 && calculationArray.length == 0) {
         // this means that the user continued with the process with
         // result from the previous calculation
+        // TODO: There's a possible error here. It causes the
+        //       check below to fail
         calculationArray.push(result.toString().split(""));
       }
     }
@@ -185,8 +190,13 @@ function clickEntry(event) {
           return;
         }
       } else {
+        console.info(
+          "[clickEntry] index of point: " + calculationArray.indexOf("."),
+        );
         let tmpStr = calculationArray.slice(calculationArray.indexOf(".") + 1);
+        console.info("[clickEntry] tmpStr: " + tmpStr);
         if (tmpStr.indexOf(".") != -1) {
+          // console.info("[clickEntry] tmpStr: " + tmpStr);
           console.warn("[clickEntry] too many points");
           return;
         }
@@ -201,30 +211,30 @@ function clickEntry(event) {
   console.log("[clickEntry] calculationArray: " + calculationArray);
 }
 
-// const numberArray = [
-//   "one",
-//   "two",
-//   "three",
-//   "four",
-//   "five",
-//   "six",
-//   "seven",
-//   "eight",
-//   "nine",
-//   "zero",
-//   "point",
-//   "zeroZero",
-// ];
-// const operatorArray = [
-//   "equals",
-//   "plus",
-//   "minus",
-//   "multiplication",
-//   "division",
-//   "clear",
-//   "percentage",
-//   "squareRoot",
-// ];
+const numberArray = [
+  "one",
+  "two",
+  "three",
+  "four",
+  "five",
+  "six",
+  "seven",
+  "eight",
+  "nine",
+  "zero",
+  "point",
+  "zeroZero",
+];
+const operatorArray = [
+  "equals",
+  "plus",
+  "minus",
+  "multiplication",
+  "division",
+  "clear",
+  "percentage",
+  "squareRoot",
+];
 
 const operatorsSymbol = ["-", "+", "x", "/"];
 const operatorsVerb = ["minus", "plus", "multiplication", "division"];
@@ -263,8 +273,11 @@ let arithmeticArray = [];
 
 // New Array to handle the arithmetic operations
 let calculationArray = [];
+let arg1 = [];
+let arg2 = [];
+let arithmeticSymbol = "";
 
 const displayArea = document.querySelector(".operations");
 let docButtons = document.querySelectorAll("button");
-// docButtons.forEach((btn) => btn.addEventListener("click", btnClick));
-docButtons.forEach((btn) => btn.addEventListener("click", clickEntry));
+docButtons.forEach((btn) => btn.addEventListener("click", btnClick));
+// docButtons.forEach((btn) => btn.addEventListener("click", clickEntry));
