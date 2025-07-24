@@ -50,7 +50,7 @@ function operate(eqArray) {
 }
 
 function clearDisplay() {
-  displayArea.textContent = "";
+  displayArea.textContent = 0;
 }
 
 function clearCalculationMemory() {
@@ -61,7 +61,7 @@ function clearCalculationMemory() {
 function arithmeticOperators(elemId) {
   if (elemId == "clear") {
     // user choose to 'clear'
-    displayArea.textContent = "";
+    clearDisplay();
     clearCalculationMemory();
   } else if (elemId == "equals") {
     // user choose to end the input
@@ -105,16 +105,22 @@ function btnClick(event) {
   // I find that using the classList would sometimes get a empty '' string
   // on the console. This might cause problems later on.
   if (numberArray.includes(event.target.id)) {
-    if (numberStr == 0 && arithmeticArray.length == 0) {
-      clearDisplay();
+    if (numberStr == "" && arithmeticArray.length == 0) {
+      displayArea.textContent = ""
+      // clearDisplay();
     }
-    if (numberStr == 0 && arithmeticArray.length == 1) {
+    if (numberStr == "" && arithmeticArray.length == 1) {
       arithmeticArray = [];
-      clearDisplay();
+      displayArea.textContent = ""
+      // clearDisplay();
     }
     let tmpChar = document.querySelector(`#${event.target.id}`).textContent;
-    numberStr += tmpChar;
-    updateDisplayArea(event.target.id);
+    if (numberStr.indexOf(".") != -1 && tmpChar == ".") {
+      console.warn("[btnClick] Repeated dot found!");
+    } else {
+      numberStr += tmpChar;
+      updateDisplayArea(event.target.id);
+    }
   }
   if (operatorArray.includes(event.target.id)) {
     arithmeticOperators(event.target.id);
