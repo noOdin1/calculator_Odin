@@ -137,6 +137,11 @@ function clickEntry(event) {
   // process restrictions first
   // the basic push into array the items clicked on
   let evtObj = document.querySelector(`#${event.target.id}`);
+  if (event.target.id == "clear") {
+    calculationArray = []; // clear the calculation array
+    result = 0;
+    return;
+  }
   if (event.target.id == "equals") {
     // send the array for calculation
     calculationProcess(calculationArray);
