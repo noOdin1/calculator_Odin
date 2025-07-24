@@ -209,7 +209,8 @@ function clickEntry(event) {
 //   "squareRoot",
 // ];
 
-const operators = ["-", "+", "x", "/"];
+const operatorsSymbol = ["-", "+", "x", "/"];
+const operatorsVerb = ["minus", "plus", "multiplication", "division"];
 const inputObj = {
   one: 1,
   two: 2,
