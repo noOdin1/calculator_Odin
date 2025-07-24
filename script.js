@@ -148,10 +148,68 @@ const operatorArray = [
   "percentage",
   "squareRoot",
 ];
+
+
+
+// const numberArray = [
+//   "one",
+//   "two",
+//   "three",
+//   "four",
+//   "five",
+//   "six",
+//   "seven",
+//   "eight",
+//   "nine",
+//   "zero",
+//   "point",
+//   "zeroZero",
+// ];
+// const operatorArray = [
+//   "equals",
+//   "plus",
+//   "minus",
+//   "multiplication",
+//   "division",
+//   "clear",
+//   "percentage",
+//   "squareRoot",
+// ];
+
+const operators = ["-", "+", "x", "/"];
+const inputObj = {
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  five: 5,
+  six: 6,
+  seven: 7,
+  eight: 8,
+  nine: 9,
+  zero: 0,
+  zeroZero: 0,
+  point: ".",
+  plus: "+",
+  minus: "-",
+  multiplication: "x",
+  division: "/",
+};
+
+const twoArgOperatorObj = {
+  plus: "+",
+  minus: "-",
+  multiplication: "x",
+  division: "/",
+};
+
 let numberStr = "";
 let arithmeticOp = "";
 // let numberStr = "";
 let arithmeticArray = [];
+
+// New Array to handle the arithmetic operations
+let calculationArray = [];
 
 const displayArea = document.querySelector(".operations");
 let docButtons = document.querySelectorAll("button");
