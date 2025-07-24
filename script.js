@@ -145,6 +145,15 @@ function clickEntry(event) {
   if (event.target.id == "equals") {
     // send the array for calculation
     calculationProcess(calculationArray);
+    result = calculationProcess(calculationArray);
+    console.log("[clickEntry] The result: " + result);
+    calculationArray = [];
+    console.log(
+      "[clickEntry] length of calculationArray: " + calculationArray.length,
+    );
+    // This return statement is necessary. Skipping this statement would mean
+    // that if (event.target.id == "zeroZero") {..} would execute.
+    return;
   }
   if (event.target.id == "zeroZero") {
     calculationArray.push(inputObj[event.target.id]);
