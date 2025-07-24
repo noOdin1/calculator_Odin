@@ -154,7 +154,6 @@ function clickEntry(event) {
   }
   if (event.target.id == "equals") {
     // send the array for calculation
-    calculationProcess(calculationArray);
     result = calculationProcess(calculationArray);
     console.log("[clickEntry] The result: " + result);
     calculationArray = [];
@@ -170,6 +169,9 @@ function clickEntry(event) {
     calculationArray.push(inputObj[event.target.id]);
   } else {
     calculationArray.push(inputObj[event.target.id]);
+    console.log(
+      "[clickEntry] length of calculationArray: " + calculationArray.length,
+    );
   }
 
   console.log("[clickEntry] calculationArray: " + calculationArray);
@@ -226,6 +228,8 @@ const twoArgOperatorObj = {
   multiplication: "x",
   division: "/",
 };
+
+let result = "";
 
 let numberStr = "";
 let arithmeticOp = "";
