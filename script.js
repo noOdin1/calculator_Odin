@@ -130,7 +130,17 @@ function calculationProcess(calcArr) {
     index = calcArr.indexOf(op) == -1 ? index : calcArr.indexOf(op);
     // console.log("[calculationProcess] index: " + index);
   });
+  let arg1 = calcArr.slice(0, index);
+  arg1 = arg1.join("");
+  let arg2 = calcArr.slice(index + 1);
+  arg2 = arg2.join("");
   console.log("[calculationProcess] index: " + index);
+  let b = calcArr.slice(index, index + 1);
+
+  console.log(
+    "[calculationProcess] arg1: " + arg1 + ", b: " + b + ", arg2: " + arg2,
+  );
+  return operate([arg1, `${b}`, arg2]);
 }
 
 function clickEntry(event) {
