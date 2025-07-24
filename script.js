@@ -126,7 +126,7 @@ function btnClick(event) {
 
 function calculationProcess(calcArr) {
   let index = 0;
-  operators.forEach((op) => {
+  operatorsSymbol.forEach((op) => {
     index = calcArr.indexOf(op) == -1 ? index : calcArr.indexOf(op);
     // console.log("[calculationProcess] index: " + index);
   });
