@@ -149,7 +149,23 @@ const operatorArray = [
   "squareRoot",
 ];
 
+function clickEntry(event) {
+  // process restrictions first
+  // the basic push into array the items clicked on
+  let evtObj = document.querySelector(`#${event.target.id}`);
+  if (event.target.id == "equals") {
+    // send the array for calculation
+    calculationProcess(calculationArray);
+  }
+  if (event.target.id == "zeroZero") {
+    calculationArray.push(inputObj[event.target.id]);
+    calculationArray.push(inputObj[event.target.id]);
+  } else {
+    calculationArray.push(inputObj[event.target.id]);
+  }
 
+  console.log("[clickEntry] calculationArray: " + calculationArray);
+}
 
 // const numberArray = [
 //   "one",
