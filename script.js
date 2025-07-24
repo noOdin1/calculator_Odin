@@ -135,12 +135,12 @@ function calculationProcess(calcArr) {
   let arg2 = calcArr.slice(index + 1);
   arg2 = arg2.join("");
   console.log("[calculationProcess] index: " + index);
-  let b = calcArr.slice(index, index + 1);
+  let symbol = calcArr.slice(index, index + 1);
 
   console.log(
-    "[calculationProcess] arg1: " + arg1 + ", b: " + b + ", arg2: " + arg2,
+    "[calculationProcess] arg1: " + arg1 + ", b: " + symbol + ", arg2: " + arg2,
   );
-  return operate([arg1, `${b}`, arg2]);
+  return operate([arg1, `${symbol}`, arg2]);
 }
 
 function clickEntry(event) {
