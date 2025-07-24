@@ -175,6 +175,23 @@ function clickEntry(event) {
         calculationArray.push(result.toString().split());
       }
     }
+    if (event.target.id == "point") {
+      // check if there's any previous '.'
+      if (
+        !operatorsSymbol.some((symbol) => calculationArray.includes(symbol))
+      ) {
+        if (calculationArray.indexOf(".") != -1) {
+          console.warn("[clickEntry] too many points");
+          return;
+        }
+      } else {
+        let tmpStr = calculationArray.slice(calculationArray.indexOf(".") + 1);
+        if (tmpStr.indexOf(".") != -1) {
+          console.warn("[clickEntry] too many points");
+          return;
+        }
+      }
+    }
     calculationArray.push(inputObj[event.target.id]);
     console.log(
       "[clickEntry] length of calculationArray: " + calculationArray.length,
