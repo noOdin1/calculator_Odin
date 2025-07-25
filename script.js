@@ -107,6 +107,13 @@ const twoArgOperatorObj = {
   division: "/",
 };
 
+const arithmeticOpObj = {
+  memory: [],
+  decimalPointPos1: -1,
+  decimalPointPos2: -1,
+  arithmeticSymbolPos: -1,
+};
+
 const displayArea = document.querySelector(".operations");
 let docButtons = document.querySelectorAll("button");
 // docButtons.forEach((btn) => btn.addEventListener("click", btnClick));
