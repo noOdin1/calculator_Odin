@@ -49,8 +49,13 @@ function clearDisplay() {
 }
 
 function clearCalculationMemory() {
-  arithmeticArray = [];
-  numberStr = "";
+  arithmeticOpObj.memory = [];
+  arithmeticOpObj.decimalPointPos1 = -1;
+  arithmeticOpObj.decimalPointPos2 = -1;
+  arithmeticOpObj.arithmeticSymbolPos = -1;
+  arithmeticOpObj.result = "";
+
+  console.clear();
 }
 
 function decimalPointFilter() {
