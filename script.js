@@ -229,7 +229,12 @@ function clickEntry(event) {
 
   if (event.target.id == "equals") {
     arithmeticEquals();
-    updateDisplayArea(arithmeticOpObj.result);
+    let displayResult =
+      arithmeticOpObj.memory.length == 0
+        ? arithmeticOpObj.result
+        : arithmeticOpObj.memory.join("");
+    // updateDisplayArea(arithmeticOpObj.result);
+    updateDisplayArea(displayResult);
 
     return;
   }
