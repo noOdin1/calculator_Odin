@@ -125,7 +125,7 @@ function arithmeticSymbolFilter(symbol) {
   return false;
 }
 
-function arithmeticEqualsFilter() {
+function arithmeticEquals() {
   let arg1 = arithmeticOpObj.memory.slice(
     0,
     arithmeticOpObj.arithmeticSymbolPos,
@@ -208,7 +208,7 @@ function clickEntry(event) {
   }
 
   if (event.target.id == "equals") {
-    arithmeticEqualsFilter();
+    arithmeticEquals();
     updateDisplayArea(arithmeticOpObj.result);
 
     return;
