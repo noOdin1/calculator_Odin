@@ -240,6 +240,7 @@ const arithmeticOpObj = {
   decimalPointPos1: -1,
   decimalPointPos2: -1,
   arithmeticSymbolPos: -1,
+  result: "",
 };
 
 const displayArea = document.querySelector(".operations");
