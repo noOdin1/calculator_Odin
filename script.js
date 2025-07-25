@@ -64,8 +64,25 @@ function clickEntry(event) {
     console.warn("[clickEntry] Too many decimal points for 1st argument");
     return;
   }
+  if (
+    // checks for 2nd arguments decimal points
+    event.target.id == "point" &&
+    arithmeticOpObj.decimalPointPos1 != -1 &&
+    arithmeticOpObj.arithmeticSymbolPos != -1 &&
+    arithmeticOpObj.decimalPointPos2 != -1
+  ) {
+    console.warn("[clickEntry] Too many decimal points for 2nd argument");
+    return;
+  }
   if (event.target.id == "point" && arithmeticOpObj.decimalPointPos1 == -1) {
     arithmeticOpObj.decimalPointPos1 = arithmeticOpObj.memory.length;
+  }
+  if (
+    event.target.id == "point" &&
+    arithmeticOpObj.decimalPointPos1 != -1 &&
+    arithmeticOpObj.arithmeticSymbolPos != -1
+  ) {
+    arithmeticOpObj.decimalPointPos2 = arithmeticOpObj.memory.length;
   }
   if (operatorsVerb.includes(event.target.id)) {
     arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
