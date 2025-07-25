@@ -113,6 +113,36 @@ function arithmeticSymbolFilter(symbol) {
   return false;
 }
 
+function arithmeticEqualsFilter() {
+  let arg1 = arithmeticOpObj.memory.slice(
+    0,
+    arithmeticOpObj.arithmeticSymbolPos,
+  );
+  let arg2 = arithmeticOpObj.memory.slice(
+    arithmeticOpObj.arithmeticSymbolPos + 1,
+  );
+  let symbol = arithmeticOpObj.memory.slice(
+    arithmeticOpObj.arithmeticSymbolPos,
+    arithmeticOpObj.arithmeticSymbolPos + 1,
+  );
+
+  arg1 = arg1.join("");
+  arg2 = arg2.join("");
+  console.log(
+    "[arithmeticEqualsFilter] arg1: " +
+      arg1 +
+      ", sym: " +
+      symbol +
+      ", arg2: " +
+      arg2,
+  );
+  arithmeticOpObj.result = operate([arg1, `${symbol}`, arg2]);
+  clearCalculationMemory();
+  console.log("[arithmeticEqualsFilter] result: " + arithmeticOpObj.result);
+
+  return;
+}
+
 function clickEntry(event) {
   // if (
   //   // checks for 1st argument decimal points
