@@ -83,7 +83,23 @@ function decimalPointFilter() {
     arithmeticOpObj.decimalPointPos2 = arithmeticOpObj.memory.length;
     return true;
   }
+
   console.warn("[decimalPointFilter] Something was not detected.");
+
+  return false;
+}
+
+function arithmeticSymbolFilter(symbol) {
+  if (arithmeticOpObj.arithmeticSymbolPos == -1) {
+    if (arithmeticOpObj.memory.length == 0 && symbol == "minus") {
+      // This is the condition where the first number is a negative number
+      return true;
+    }
+    arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
+    return true;
+  }
+
+  console.warn("[arithmeticSymbolFilter] Something was not detected.");
 
   return false;
 }
@@ -125,8 +141,11 @@ function clickEntry(event) {
   }
 
   if (operatorsVerb.includes(event.target.id)) {
-    arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
+    if (!arithmeticSymbolFilter(event.target.id)) {
+      return;
+    }
   }
+
   arithmeticOpObj.memory.push(inputObj[event.target.id]);
   console.log(
     "[clickEntry] memory: " +
