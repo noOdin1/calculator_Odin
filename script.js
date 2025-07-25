@@ -93,6 +93,11 @@ function decimalPointFilter() {
   return false;
 }
 
+function moveResultToMemory() {
+  arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
+  arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
+}
+
 function arithmeticSymbolFilter(symbol) {
   if (arithmeticOpObj.arithmeticSymbolPos == -1) {
     // This is the condition where the first number is a negative number
