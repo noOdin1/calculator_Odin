@@ -187,6 +187,7 @@ function clickEntry(event) {
   // }
   if (event.target.id == "clear") {
     clearCalculationMemory();
+    arithmeticOpObj.result = "";
     clearDisplay();
     return;
   }
