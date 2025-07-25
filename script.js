@@ -54,6 +54,40 @@ function clearCalculationMemory() {
   numberStr = "";
 }
 
+function decimalPointFilter() {
+  if (
+    // checks for 1st argument decimal points
+    arithmeticOpObj.decimalPointPos1 != -1 &&
+    arithmeticOpObj.arithmeticSymbolPos == -1
+  ) {
+    console.warn("[clickEntry] Too many decimal points for 1st argument");
+    return false;
+  }
+  if (
+    // checks for 2nd arguments decimal points
+    arithmeticOpObj.decimalPointPos1 != -1 &&
+    arithmeticOpObj.arithmeticSymbolPos != -1 &&
+    arithmeticOpObj.decimalPointPos2 != -1
+  ) {
+    console.warn("[clickEntry] Too many decimal points for 2nd argument");
+    return false;
+  }
+  if (arithmeticOpObj.decimalPointPos1 == -1) {
+    arithmeticOpObj.decimalPointPos1 = arithmeticOpObj.memory.length;
+    return true;
+  }
+  if (
+    arithmeticOpObj.decimalPointPos1 != -1 &&
+    arithmeticOpObj.arithmeticSymbolPos != -1
+  ) {
+    arithmeticOpObj.decimalPointPos2 = arithmeticOpObj.memory.length;
+    return true;
+  }
+  console.warn("[decimalPointFilter] Something was not detected.");
+
+  return false;
+}
+
 function clickEntry(event) {
   if (
     // checks for 1st argument decimal points
