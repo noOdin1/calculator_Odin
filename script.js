@@ -191,7 +191,8 @@ function clickEntry(event) {
         }
       } else {
         console.info(
-          "[clickEntry] index of point: " + calculationArray.indexOf("."),
+          // "[clickEntry] index of point: " + calculationArray.indexOf("."),
+          "[clickEntry] index of point: " + calculationArray.indexOf(`${"."}`),
         );
         let tmpStr = calculationArray.slice(calculationArray.indexOf(".") + 1);
         console.info("[clickEntry] tmpStr: " + tmpStr);
@@ -279,5 +280,5 @@ let arithmeticSymbol = "";
 
 const displayArea = document.querySelector(".operations");
 let docButtons = document.querySelectorAll("button");
-docButtons.forEach((btn) => btn.addEventListener("click", btnClick));
-// docButtons.forEach((btn) => btn.addEventListener("click", clickEntry));
+// docButtons.forEach((btn) => btn.addEventListener("click", btnClick));
+docButtons.forEach((btn) => btn.addEventListener("click", clickEntry));
