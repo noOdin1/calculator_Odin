@@ -54,6 +54,10 @@ function clearCalculationMemory() {
   numberStr = "";
 }
 
+function clickEntry(event) {
+  arithmeticOpObj.memory.push(inputObj[event.target.id]);
+}
+
 const numberArray = [
   "one",
   "two",
