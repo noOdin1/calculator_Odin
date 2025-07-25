@@ -199,8 +199,9 @@ function clickEntry(event) {
   }
 
   if (
-    operatorsVerb.includes(event.target.id) &&
-    arithmeticOpObj.arithmeticSymbolPos == -1
+    operatorsVerb.includes(event.target.id)
+    //   &&
+    // arithmeticOpObj.arithmeticSymbolPos == -1
   ) {
     if (!arithmeticSymbolFilter(event.target.id)) {
       return;
