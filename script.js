@@ -155,7 +155,9 @@ function clickEntry(event) {
       ", decimal point pos1: " +
       arithmeticOpObj.decimalPointPos1 +
       ", decimal point pos2: " +
-      arithmeticOpObj.decimalPointPos2,
+      arithmeticOpObj.decimalPointPos2 +
+      ", memory length: " +
+      arithmeticOpObj.memory.length,
   );
 }
 
