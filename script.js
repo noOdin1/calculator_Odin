@@ -55,7 +55,7 @@ function clearCalculationMemory() {
   arithmeticOpObj.arithmeticSymbolPos = -1;
   // arithmeticOpObj.result = "";
 
-  console.clear();
+  // console.clear();
 }
 
 function decimalPointFilter() {
