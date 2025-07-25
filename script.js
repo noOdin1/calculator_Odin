@@ -99,6 +99,18 @@ function arithmeticSymbolFilter(symbol) {
       // This is the condition where the first number is a negative number
       return true;
     }
+    // condition: if user decides to continue with calculation after pressing
+    // equals sign
+    if (arithmeticOpObj.memory.length == 0 && arithmeticOpObj.result != 0) {
+      arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
+      arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
+      console.log(
+        "[arithmeticSymbolFilter] arithmeticOpObj.memory: " +
+          arithmeticOpObj.memory,
+      );
+      arithmeticOpObj.result = 0;
+      return true;
+    }
     // check if symbols were added right after a decimal point
     if (arithmeticOpObj.memory.length == arithmeticOpObj.decimalPointPos1 + 1) {
       console.warn("[arithmeticSymbolFilter] Cannot add symbol here");
