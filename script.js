@@ -1,7 +1,6 @@
 function updateDisplayArea(displayStr) {
   console.log("[updateDisplayArea] displayStr: " + displayStr);
-  let btnTxt = document.querySelector(`#${displayStr}`);
-  displayArea.textContent += btnTxt.textContent;
+  displayArea.textContent = displayStr;
 }
 
 function displayText(strToDisplay) {
