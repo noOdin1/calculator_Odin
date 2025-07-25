@@ -161,6 +161,13 @@ function clickEntry(event) {
     }
   }
 
+  if (event.target.id == "equals") {
+    arithmeticEqualsFilter();
+    updateDisplayArea(arithmeticOpObj.result);
+
+    return;
+  }
+
   arithmeticOpObj.memory.push(inputObj[event.target.id]);
 
   updateDisplayArea(arithmeticOpObj.memory.join(""));
