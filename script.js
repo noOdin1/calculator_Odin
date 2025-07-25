@@ -239,6 +239,18 @@ function clickEntry(event) {
     return;
   }
 
+  // console.log(
+  //   "[- clickEntry - 1] arithmeticOpObj.memory: " +
+  //     arithmeticOpObj.memory +
+  //     "\narithmeticEquals.arithmeticSymbolPos: " +
+  //     arithmeticOpObj.arithmeticSymbolPos +
+  //     ", arithmeticEquals.decimalPointPos1: " +
+  //     arithmeticOpObj.decimalPointPos1 +
+  //     ", arithmeticEquals.decimalPointPos2: " +
+  //     arithmeticOpObj.decimalPointPos2 +
+  //     ", arithmeticOpObj.memory length: " +
+  //     arithmeticOpObj.memory.length,
+  // );
   arithmeticOpObj.memory.push(inputObj[event.target.id]);
 
   updateDisplayArea(arithmeticOpObj.memory.join(""));
