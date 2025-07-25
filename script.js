@@ -56,6 +56,16 @@ function clearCalculationMemory() {
 
 function clickEntry(event) {
   arithmeticOpObj.memory.push(inputObj[event.target.id]);
+  console.log(
+    "[clickEntry] memory: " +
+      arithmeticOpObj.memory +
+      "\noperator symbol pos: " +
+      arithmeticOpObj.arithmeticSymbolPos +
+      ", decimal point pos1: " +
+      arithmeticOpObj.decimalPointPos1 +
+      ", decimal point pos2: " +
+      arithmeticOpObj.decimalPointPos2,
+  );
 }
 
 const numberArray = [
