@@ -95,8 +95,13 @@ function decimalPointFilter() {
 
 function arithmeticSymbolFilter(symbol) {
   if (arithmeticOpObj.arithmeticSymbolPos == -1) {
+    // This is the condition where the first number is a negative number
     if (arithmeticOpObj.memory.length == 0 && symbol == "minus") {
-      // This is the condition where the first number is a negative number
+      // If the user wishes to proceed with another operation
+      if (arithmeticOpObj.result != 0) {
+        arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
+        arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
+      }
       return true;
     }
     // condition: if user decides to continue with calculation after pressing
