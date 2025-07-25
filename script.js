@@ -95,6 +95,11 @@ function arithmeticSymbolFilter(symbol) {
       // This is the condition where the first number is a negative number
       return true;
     }
+    // check if symbols were added right after a decimal point
+    if (arithmeticOpObj.memory.length == arithmeticOpObj.decimalPointPos1 + 1) {
+      console.warn("[arithmeticSymbolFilter] Cannot add symbol here");
+      return false;
+    }
     arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
     return true;
   }
@@ -147,6 +152,7 @@ function clickEntry(event) {
   }
 
   arithmeticOpObj.memory.push(inputObj[event.target.id]);
+
   console.log(
     "[clickEntry] memory: " +
       arithmeticOpObj.memory +
