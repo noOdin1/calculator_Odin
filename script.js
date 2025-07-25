@@ -152,33 +152,59 @@ function arithmeticSymbolFilter(symbol) {
 }
 
 function arithmeticEquals() {
-  let arg1 = arithmeticOpObj.memory.slice(
-    0,
-    arithmeticOpObj.arithmeticSymbolPos,
-  );
-  let arg2 = arithmeticOpObj.memory.slice(
-    arithmeticOpObj.arithmeticSymbolPos + 1,
-  );
-  let symbol = arithmeticOpObj.memory.slice(
-    arithmeticOpObj.arithmeticSymbolPos,
-    arithmeticOpObj.arithmeticSymbolPos + 1,
-  );
-
-  arg1 = arg1.join("");
-  arg2 = arg2.join("");
   console.log(
-    "[arithmeticEqualsFilter] arg1: " +
-      arg1 +
-      ", sym: " +
-      symbol +
-      ", arg2: " +
-      arg2,
+    "[arithmeticEquals] arithmeticOpObj.memory: " +
+      arithmeticOpObj.memory +
+      "\narithmeticEquals.arithmeticSymbolPos: " +
+      arithmeticOpObj.arithmeticSymbolPos +
+      ", arithmeticEquals.decimalPointPos1: " +
+      arithmeticOpObj.decimalPointPos1 +
+      ", arithmeticEquals.decimalPointPos2: " +
+      arithmeticOpObj.decimalPointPos2 +
+      ", arithmeticOpObj.memory length: " +
+      arithmeticOpObj.memory.length,
   );
-  arithmeticOpObj.result = operate([arg1, `${symbol}`, arg2]);
-  clearCalculationMemory();
-  console.log("[arithmeticEqualsFilter] result: " + arithmeticOpObj.result);
+  // This condition will not assume anything, but check for it
+  if (
+    arithmeticOpObj.arithmeticSymbolPos != -1 &&
+    arithmeticOpObj.memory.length > arithmeticOpObj.arithmeticSymbolPos + 1
+  ) {
+    let arg1 = arithmeticOpObj.memory.slice(
+      0,
+      arithmeticOpObj.arithmeticSymbolPos,
+    );
+    let arg2 = arithmeticOpObj.memory.slice(
+      arithmeticOpObj.arithmeticSymbolPos + 1,
+    );
+    let symbol = arithmeticOpObj.memory.slice(
+      arithmeticOpObj.arithmeticSymbolPos,
+      arithmeticOpObj.arithmeticSymbolPos + 1,
+    );
 
-  return;
+    arg1 = arg1.join("");
+    arg2 = arg2.join("");
+    console.log(
+      "[arithmeticEquals] arg1: " +
+        arg1 +
+        ", sym: " +
+        symbol +
+        ", arg2: " +
+        arg2,
+    );
+    arithmeticOpObj.result = operate([arg1, `${symbol}`, arg2]);
+    clearCalculationMemory();
+    console.log("[arithmeticEquals] result: " + arithmeticOpObj.result);
+
+    return;
+  }
+  if (
+    arithmeticOpObj.memory.length ==
+    arithmeticOpObj.arithmeticSymbolPos + 1
+  ) {
+    arithmeticOpObj.memory.pop();
+    arithmeticOpObj.arithmeticSymbolPos = -1;
+    return;
+  }
 }
 
 function clickEntry(event) {
