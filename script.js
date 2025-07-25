@@ -98,6 +98,7 @@ const inputObj = {
   minus: "-",
   multiplication: "x",
   division: "/",
+  equals: "=",
 };
 
 const twoArgOperatorObj = {
@@ -116,5 +117,4 @@ const arithmeticOpObj = {
 
 const displayArea = document.querySelector(".operations");
 let docButtons = document.querySelectorAll("button");
-// docButtons.forEach((btn) => btn.addEventListener("click", btnClick));
 docButtons.forEach((btn) => btn.addEventListener("click", clickEntry));
