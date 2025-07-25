@@ -163,6 +163,8 @@ function clickEntry(event) {
 
   arithmeticOpObj.memory.push(inputObj[event.target.id]);
 
+  updateDisplayArea(arithmeticOpObj.memory.join(""));
+
   console.log(
     "[clickEntry] memory: " +
       arithmeticOpObj.memory +
