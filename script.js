@@ -174,6 +174,8 @@ function clickEntry(event) {
       arithmeticOpObj.decimalPointPos1 +
       ", decimal point pos2: " +
       arithmeticOpObj.decimalPointPos2 +
+      ", result: " +
+      arithmeticOpObj.result +
       ", memory length: " +
       arithmeticOpObj.memory.length,
   );
