@@ -119,6 +119,19 @@ function arithmeticSymbolFilter(symbol) {
     arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
     return true;
   }
+  if (arithmeticOpObj.arithmeticSymbolPos != -1) {
+    // condition where the user presses another arithmetic symbol
+    arithmeticEquals();
+
+    arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
+    arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
+    console.log(
+      "[arithmeticSymbolFilter] arithmeticOpObj.memory: " +
+        arithmeticOpObj.memory,
+    );
+    arithmeticOpObj.result = 0;
+    return true;
+  }
 
   console.warn("[arithmeticSymbolFilter] Something was not detected.");
 
