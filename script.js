@@ -143,6 +143,12 @@ function clickEntry(event) {
   // ) {
   //   arithmeticOpObj.decimalPointPos2 = arithmeticOpObj.memory.length;
   // }
+  if (event.target.id == "clear") {
+    clearCalculationMemory();
+    clearDisplay();
+    return;
+  }
+
   if (event.target.id == "point") {
     if (!decimalPointFilter()) {
       return;
