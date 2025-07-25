@@ -55,6 +55,18 @@ function clearCalculationMemory() {
 }
 
 function clickEntry(event) {
+  if (
+    // checks for 1st argument decimal points
+    event.target.id == "point" &&
+    arithmeticOpObj.decimalPointPos1 != -1 &&
+    arithmeticOpObj.arithmeticSymbolPos == -1
+  ) {
+    console.warn("[clickEntry] Too many decimal points for 1st argument");
+    return;
+  }
+  if (event.target.id == "point" && arithmeticOpObj.decimalPointPos1 == -1) {
+    arithmeticOpObj.decimalPointPos1 = arithmeticOpObj.memory.length;
+  }
   if (operatorsVerb.includes(event.target.id)) {
     arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
   }
