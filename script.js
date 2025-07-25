@@ -55,6 +55,9 @@ function clearCalculationMemory() {
 }
 
 function clickEntry(event) {
+  if (operatorsVerb.includes(event.target.id)) {
+    arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
+  }
   arithmeticOpObj.memory.push(inputObj[event.target.id]);
   console.log(
     "[clickEntry] memory: " +
