@@ -136,18 +136,7 @@ function arithmeticSymbolFilter(symbol) {
 }
 
 function arithmeticEquals() {
-  console.log(
-    "[arithmeticEquals] arithmeticOpObj.memory: " +
-      arithmeticOpObj.memory +
-      "\narithmeticEquals.arithmeticSymbolPos: " +
-      arithmeticOpObj.arithmeticSymbolPos +
-      ", arithmeticEquals.decimalPointPos1: " +
-      arithmeticOpObj.decimalPointPos1 +
-      ", arithmeticEquals.decimalPointPos2: " +
-      arithmeticOpObj.decimalPointPos2 +
-      ", arithmeticOpObj.memory length: " +
-      arithmeticOpObj.memory.length,
-  );
+  arithmeticOpObj.showValues("arithmeticEquals");
   // This condition will not assume anything, but check for it
   if (
     arithmeticOpObj.arithmeticSymbolPos != -1 &&
