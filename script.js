@@ -99,8 +99,6 @@ function arithmeticSymbolFilter(symbol) {
     if (arithmeticOpObj.memory.length == 0 && symbol == "minus") {
       // If the user wishes to proceed with another operation
       if (arithmeticOpObj.result != 0) {
-        // arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
-        // arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
         arithmeticOpObj.moveResultToMemory();
       }
       return true;
@@ -108,8 +106,6 @@ function arithmeticSymbolFilter(symbol) {
     // condition: if user decides to continue with calculation after pressing
     // equals sign
     if (arithmeticOpObj.memory.length == 0 && arithmeticOpObj.result != 0) {
-      // arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
-      // arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
       arithmeticOpObj.moveResultToMemory();
       console.log(
         "[arithmeticSymbolFilter] arithmeticOpObj.memory: " +
@@ -130,8 +126,6 @@ function arithmeticSymbolFilter(symbol) {
     // condition where the user presses another arithmetic symbol
     arithmeticEquals();
 
-    // arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
-    // arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
     arithmeticOpObj.moveResultToMemory();
     console.log(
       "[arithmeticSymbolFilter] arithmeticOpObj.memory: " +
@@ -314,6 +308,15 @@ const arithmeticOpObj = {
   moveResultToMemory: function () {
     arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
     arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
+  },
+  valuesForDisplay: function () {
+    if (this.arithmeticSymbolPos == -1) {
+      return this.memory.join("");
+    }
+    if (this.memory.length > this.arithmeticSymbolPos + 1) {
+      return this.memory.slice(this.arithmeticSymbolPos + 1).join();
+    }
+    return "";
   },
 };
 
