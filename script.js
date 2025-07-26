@@ -93,11 +93,6 @@ function decimalPointFilter() {
   return false;
 }
 
-function moveResultToMemory() {
-  arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
-  arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
-}
-
 function arithmeticSymbolFilter(symbol) {
   if (arithmeticOpObj.arithmeticSymbolPos == -1) {
     // This is the condition where the first number is a negative number
@@ -106,7 +101,7 @@ function arithmeticSymbolFilter(symbol) {
       if (arithmeticOpObj.result != 0) {
         // arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
         // arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
-        moveResultToMemory();
+        arithmeticOpObj.moveResultToMemory();
       }
       return true;
     }
@@ -115,7 +110,7 @@ function arithmeticSymbolFilter(symbol) {
     if (arithmeticOpObj.memory.length == 0 && arithmeticOpObj.result != 0) {
       // arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
       // arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
-      moveResultToMemory();
+      arithmeticOpObj.moveResultToMemory();
       console.log(
         "[arithmeticSymbolFilter] arithmeticOpObj.memory: " +
           arithmeticOpObj.memory,
@@ -137,7 +132,7 @@ function arithmeticSymbolFilter(symbol) {
 
     // arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
     // arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
-    moveResultToMemory();
+    arithmeticOpObj.moveResultToMemory();
     console.log(
       "[arithmeticSymbolFilter] arithmeticOpObj.memory: " +
         arithmeticOpObj.memory,
