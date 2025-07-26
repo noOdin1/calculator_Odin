@@ -21,7 +21,7 @@ body {
   display: flex;
   flex-direction: column;
   margin: 20px auto;
-  border: 8px solid black;
+  border: 8px solid DarkSlateGray;
   border-style: outset;
 }
 
@@ -46,6 +46,7 @@ body {
   background: LightGray;
   /* box-shadow: 5px 5px 5px Silver; */
   border-style: inset;
+  text-shadow: 2px 2px 5px #1c1c2e;
 }
 
 .operations .display p {
