@@ -59,31 +59,26 @@ function clearCalculationMemory() {
 }
 
 function decimalPointFilter() {
-  if (
+  if (arithmeticOpObj.arithmeticSymbolPos == -1) {
     // checks for 1st argument decimal points
-    arithmeticOpObj.decimalPointPos1 != -1 &&
-    arithmeticOpObj.arithmeticSymbolPos == -1
-  ) {
-    console.warn("[clickEntry] Too many decimal points for 1st argument");
-    return false;
-  }
-  if (
-    // checks for 2nd arguments decimal points
-    arithmeticOpObj.decimalPointPos1 != -1 &&
-    arithmeticOpObj.arithmeticSymbolPos != -1 &&
-    arithmeticOpObj.decimalPointPos2 != -1
-  ) {
-    console.warn("[clickEntry] Too many decimal points for 2nd argument");
-    return false;
-  }
-  if (arithmeticOpObj.decimalPointPos1 == -1) {
+    if (arithmeticOpObj.decimalPointPos1 != -1) {
+      console.warn(
+        "[decimalPointFilter] Too many decimal points for 1st argument, " +
+          arithmeticOpObj.returnArgument("1"),
+      );
+      return false;
+    }
     arithmeticOpObj.decimalPointPos1 = arithmeticOpObj.memory.length;
     return true;
   }
-  if (
-    arithmeticOpObj.decimalPointPos1 != -1 &&
-    arithmeticOpObj.arithmeticSymbolPos != -1
-  ) {
+  if (arithmeticOpObj.arithmeticSymbolPos != -1) {
+    // checks 2nd argument for decimal points
+    if (arithmeticOpObj.decimalPointPos2 != -1) {
+      console.warn(
+        "[decimalPointFilter] Too many decimal points for 2nd argument",
+      );
+      return false;
+    }
     arithmeticOpObj.decimalPointPos2 = arithmeticOpObj.memory.length;
     return true;
   }
