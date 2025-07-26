@@ -101,16 +101,6 @@ body {
   align-items: center;
 }
 
-/* .button:hover { */
-/*   background-color: #3e8e41; */
-/* } */
-/**/
-/* .button:active { */
-/*   background-color: #3e8e41; */
-/*   box-shadow: 0 5px #666; */
-/*   transform: translateY(4px); */
-/* } */
-/**/
 .button {
   display: flex;
   flex-direction: row;
@@ -136,4 +126,32 @@ button {
   text-align: center;
   font-size: 24px;
   font-weight: 900;
+  /* button styling
+   *   src:  https://www.w3schools.com/csS/tryit.asp?filename=trycss_buttons_animate3
+   **/
+  /* https://www.geeksforgeeks.org/css/how-to-create-embossed-text-effect-using-css/
+   **/
+  text-shadow:
+    -2px 2px 4px rgba(0, 0, 0, 0.6),
+    2px -2px 3px rgba(255, 255, 255, 0.6);
+  display: inline-block;
+  outline: none;
+  color: #f2f2f3;
+  background-color: #1e1e24;
+  background-color: #606069;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 9px #999;
+}
+
+button:hover {
+  /* background-color: #3e8e41; */
+  background-color: #434352;
+}
+
+button:active {
+  /* background-color: #3e8e41; */
+  background-color: #3c3c57;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
