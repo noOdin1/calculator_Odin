@@ -66,6 +66,10 @@ function decimalPointFilter() {
         "[decimalPointFilter] Too many decimal points for 1st argument, " +
           arithmeticOpObj.returnArgument("1"),
       );
+      // console.warn(
+      //   "[decimalPointFilter] Too many decimal points for 1st argument",
+      // );
+      arithmeticOpObj.showValues("decimalPointFilter - 1");
       return false;
     }
     arithmeticOpObj.decimalPointPos1 = arithmeticOpObj.memory.length;
@@ -75,8 +79,13 @@ function decimalPointFilter() {
     // checks 2nd argument for decimal points
     if (arithmeticOpObj.decimalPointPos2 != -1) {
       console.warn(
-        "[decimalPointFilter] Too many decimal points for 2nd argument",
+        "[decimalPointFilter] Too many decimal points for 2nd argument, " +
+          arithmeticOpObj.returnArgument("2"),
       );
+      // console.warn(
+      //   "[decimalPointFilter] Too many decimal points for 2nd argument",
+      // );
+      arithmeticOpObj.showValues("decimalPointFilter - 2");
       return false;
     }
     arithmeticOpObj.decimalPointPos2 = arithmeticOpObj.memory.length;
