@@ -342,6 +342,10 @@ const arithmeticOpObj = {
         `, result: ${this.result}, memory length: ${this.memory.length}`,
     );
   },
+  moveResultToMemory: function () {
+    arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
+    arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
+  },
 };
 
 const displayArea = document.querySelector(".operations");
