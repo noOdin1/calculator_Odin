@@ -256,20 +256,20 @@ function clickEntry(event) {
   updateDisplayArea(arithmeticOpObj.memory.join(""));
 
   arithmeticOpObj.showValues("clickEntry");
-  console.log(
-    "[clickEntry] memory: " +
-      arithmeticOpObj.memory +
-      "\noperator symbol pos: " +
-      arithmeticOpObj.arithmeticSymbolPos +
-      ", decimal point pos1: " +
-      arithmeticOpObj.decimalPointPos1 +
-      ", decimal point pos2: " +
-      arithmeticOpObj.decimalPointPos2 +
-      ", result: " +
-      arithmeticOpObj.result +
-      ", memory length: " +
-      arithmeticOpObj.memory.length,
-  );
+  // console.log(
+  //   "[clickEntry] memory: " +
+  //     arithmeticOpObj.memory +
+  //     "\noperator symbol pos: " +
+  //     arithmeticOpObj.arithmeticSymbolPos +
+  //     ", decimal point pos1: " +
+  //     arithmeticOpObj.decimalPointPos1 +
+  //     ", decimal point pos2: " +
+  //     arithmeticOpObj.decimalPointPos2 +
+  //     ", result: " +
+  //     arithmeticOpObj.result +
+  //     ", memory length: " +
+  //     arithmeticOpObj.memory.length,
+  // );
 }
 
 const numberArray = [
@@ -335,17 +335,11 @@ const arithmeticOpObj = {
 
   showValues: function (functionName) {
     console.log(
-      `[${functionName}] memory: ${this.memory}` +
-        "\noperator symbol pos: " +
-        this.arithmeticSymbolPos +
-        ", decimal point pos1: " +
-        this.decimalPointPos1 +
-        ", decimal point pos2: " +
-        this.decimalPointPos2 +
-        ", result: " +
-        this.result +
-        ", memory length: " +
-        this.memory.length,
+      `[${functionName}] arithmeticOpObj values = memory: ${this.memory} 
+        operator symbol pos: ${this.arithmeticSymbolPos}` +
+        `, decimal point pos1: ${this.decimalPointPos1}` +
+        `, decimal point pos2: ${this.decimalPointPos2}` +
+        `, result: ${this.result}, memory length: ${this.memory.length}`,
     );
   },
 };
