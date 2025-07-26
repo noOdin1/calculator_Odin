@@ -132,8 +132,8 @@ button {
   /* https://www.geeksforgeeks.org/css/how-to-create-embossed-text-effect-using-css/
    **/
   text-shadow:
-    -2px 2px 4px rgba(0, 0, 0, 0.6),
-    2px -2px 3px rgba(255, 255, 255, 0.6);
+    -2px 2px 4px rgba(0, 0, 0, 0.8),
+    2px -2px 3px rgba(255, 255, 255, 0.4);
   display: inline-block;
   outline: none;
   color: #f2f2f3;
