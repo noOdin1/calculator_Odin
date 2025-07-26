@@ -136,12 +136,13 @@ button {
     2px -2px 3px rgba(255, 255, 255, 0.4);
   display: inline-block;
   outline: none;
-  color: #f2f2f3;
+  /* color: #f2f2f3; */
+  color: #dadadd;
   background-color: #1e1e24;
   background-color: #606069;
   border: none;
-  border-radius: 10px;
-  box-shadow: 0 9px #999;
+  border-radius: 6px;
+  box-shadow: 0 5px #999;
 }
 
 button:hover {
