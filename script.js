@@ -304,6 +304,29 @@ const arithmeticOpObj = {
     arithmeticOpObj.memory = arithmeticOpObj.result.toString().split("");
     arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
   },
+  returnArgument: function (arg) {
+    if (arg == "1") {
+      let len =
+        this.arithmeticSymbolPos == -1
+          ? this.memory.length
+          : this.arithmeticSymbolPos;
+      return this.memory.slice(0, len).join("");
+    }
+    if (arg == "2") {
+      return this.arithmeticSymbolPos == -1
+        ? "-1"
+        : this.memory.slice(this.arithmeticSymbolPos + 1).join("");
+    }
+    if (arg == "symbol") {
+      if (this.arithmeticSymbolPos == -1) {
+        return "-1";
+      }
+      return this.memory.slice(
+        this.arithmeticSymbolPos,
+        this.arithmeticSymbolPos + 1,
+      );
+    }
+  },
   valuesForDisplay: function () {
     if (this.arithmeticSymbolPos == -1) {
       return this.memory.join("");
