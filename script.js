@@ -255,6 +255,7 @@ function clickEntry(event) {
 
   updateDisplayArea(arithmeticOpObj.memory.join(""));
 
+  arithmeticOpObj.showValues("clickEntry");
   console.log(
     "[clickEntry] memory: " +
       arithmeticOpObj.memory +
@@ -331,6 +332,22 @@ const arithmeticOpObj = {
   decimalPointPos2: -1,
   arithmeticSymbolPos: -1,
   result: "",
+
+  showValues: function (functionName) {
+    console.log(
+      `[${functionName}] memory: ${this.memory}` +
+        "\noperator symbol pos: " +
+        this.arithmeticSymbolPos +
+        ", decimal point pos1: " +
+        this.decimalPointPos1 +
+        ", decimal point pos2: " +
+        this.decimalPointPos2 +
+        ", result: " +
+        this.result +
+        ", memory length: " +
+        this.memory.length,
+    );
+  },
 };
 
 const displayArea = document.querySelector(".operations");
