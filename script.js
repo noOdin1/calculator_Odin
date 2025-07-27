@@ -237,6 +237,9 @@ function clickEntry(event) {
   updateDisplayArea(arithmeticOpObj.memory.join(""));
 
   arithmeticOpObj.showValues("clickEntry");
+
+function clickEntry(event) {
+  processInputs(event.target.id);
 }
 
 const numberArray = [
