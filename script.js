@@ -66,9 +66,6 @@ function decimalPointFilter() {
         "[decimalPointFilter] Too many decimal points for 1st argument, " +
           arithmeticOpObj.returnArgument("1"),
       );
-      // console.warn(
-      //   "[decimalPointFilter] Too many decimal points for 1st argument",
-      // );
       arithmeticOpObj.showValues("decimalPointFilter - 1");
       return false;
     }
@@ -82,9 +79,6 @@ function decimalPointFilter() {
         "[decimalPointFilter] Too many decimal points for 2nd argument, " +
           arithmeticOpObj.returnArgument("2"),
       );
-      // console.warn(
-      //   "[decimalPointFilter] Too many decimal points for 2nd argument",
-      // );
       arithmeticOpObj.showValues("decimalPointFilter - 2");
       return false;
     }
