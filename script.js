@@ -243,6 +243,24 @@ function processInputs(signal) {
   arithmeticOpObj.showValues("processInputs");
 }
 
+function userKeyPress(event) {
+  // processInputs(Object.keys(inputObj).find((key) => object[key] === value));
+
+  // The following was how we can get the reverse of a key from an object:
+  //   src: https://stackoverflow.com/questions/9907419/how-to-get-a-key-in-a-javascript-object-by-its-value
+  let tmpVal = Object.keys(inputObj).find((key) => inputObj[key] === event.key);
+
+  if (typeof tmpVal === "undefined") {
+    console.log(
+      "[userKeyPress] exiting, no value to process, tmpVal: " + tmpVal,
+    );
+    return;
+  }
+  console.log("[userKeyPress] tmpVal: " + tmpVal);
+  processInputs(`${tmpVal}`);
+  //processInputs(event.key);
+}
+
 function clickEntry(event) {
   processInputs(event.target.id);
 }
