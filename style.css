@@ -23,6 +23,7 @@ body {
   margin: 20px auto;
   border: 8px solid DarkSlateGray;
   border-style: outset;
+  border-radius: 8px;
 }
 
 .display {
