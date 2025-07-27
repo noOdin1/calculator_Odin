@@ -111,22 +111,15 @@ function arithmeticSymbolFilter(symbol) {
       arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
       return true;
     }
-    // condition: if user decides to continue with calculation after pressing
-    // equals sign
-    if (arithmeticOpObj.memory.length == 0 && arithmeticOpObj.result != 0) {
+    if (arithmeticOpObj.memory == 0 && arithmeticOpObj.result != 0) {
+      // if the user decides to continue using previous result
       arithmeticOpObj.moveResultToMemory();
-      console.log(
-        "[arithmeticSymbolFilter] arithmeticOpObj.memory: " +
-          arithmeticOpObj.memory,
-      );
-      arithmeticOpObj.result = 0;
+      arithmeticOpObj.result = "";
+      arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
+
       return true;
     }
-    // check if symbols were added right after a decimal point
-    if (arithmeticOpObj.memory.length == arithmeticOpObj.decimalPointPos1 + 1) {
-      console.warn("[arithmeticSymbolFilter] Cannot add symbol here");
-      return false;
-    }
+    // store the arithmetic pos.
     arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
     return true;
   }
