@@ -157,3 +157,11 @@ button:active {
   box-shadow: 0 2px #666;
   transform: translateY(4px);
 }
+
+.operators.button.equals {
+  width: 100%;
+}
+
+#equals {
+  width: 100%;
+}
