@@ -350,3 +350,4 @@ const arithmeticOpObj = {
 const displayArea = document.querySelector(".operations");
 let docButtons = document.querySelectorAll("button");
 docButtons.forEach((btn) => btn.addEventListener("click", clickEntry));
+document.addEventListener("keydown", userKeyPress);
