@@ -93,12 +93,22 @@ function decimalPointFilter() {
 
 function arithmeticSymbolFilter(symbol) {
   if (arithmeticOpObj.arithmeticSymbolPos == -1) {
-    // This is the condition where the first number is a negative number
-    if (arithmeticOpObj.memory.length == 0 && symbol == "minus") {
-      // If the user wishes to proceed with another operation
-      if (arithmeticOpObj.result != 0) {
-        arithmeticOpObj.moveResultToMemory();
+    // the first time an arithmetic symbol was pressed
+    if (symbol == "minus") {
+      // If the user entered 'minus'
+      if (arithmeticOpObj.memory.length == 0) {
+        if (arithmeticOpObj.result != 0) {
+          // the user decided to continue with the calculation but entered
+          // a minus for a negative number.
+          arithmeticOpObj.moveResultToMemory();
+          arithmeticOpObj.result = "";
+          return true;
+        }
+        // the minus is the first letter, a negative number
+        return true;
       }
+      // store the arithmetic pos.
+      arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
       return true;
     }
     // condition: if user decides to continue with calculation after pressing
