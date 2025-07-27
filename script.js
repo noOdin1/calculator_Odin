@@ -200,27 +200,31 @@ function arithmeticEquals() {
   }
 }
 
-function clickEntry(event) {
-  if (event.target.id == "clear") {
+function processInputs(signal) {
+  console.log("[processInputs] signal: " + signal);
+  // Function to process all the inputs from the user
+  // This function will remove all the desicion making
+  // from clickEntry and userKeyPress function.
+  if (signal == "clear") {
     clearCalculationMemory();
     arithmeticOpObj.result = "";
     clearDisplay();
     return;
   }
 
-  if (event.target.id == "point") {
+  if (signal == "point") {
     if (!decimalPointFilter()) {
       return;
     }
   }
 
-  if (operatorsVerb.includes(event.target.id)) {
-    if (!arithmeticSymbolFilter(event.target.id)) {
+  if (operatorsVerb.includes(signal)) {
+    if (!arithmeticSymbolFilter(signal)) {
       return;
     }
   }
 
-  if (event.target.id == "equals") {
+  if (signal == "equals") {
     arithmeticEquals();
     let displayResult =
       arithmeticOpObj.memory.length == 0
@@ -232,11 +236,12 @@ function clickEntry(event) {
     return;
   }
 
-  arithmeticOpObj.memory.push(inputObj[event.target.id]);
+  arithmeticOpObj.memory.push(inputObj[signal]);
 
   updateDisplayArea(arithmeticOpObj.memory.join(""));
 
-  arithmeticOpObj.showValues("clickEntry");
+  arithmeticOpObj.showValues("processInputs");
+}
 
 function clickEntry(event) {
   processInputs(event.target.id);
