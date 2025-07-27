@@ -123,8 +123,21 @@ function arithmeticSymbolFilter(symbol) {
     arithmeticOpObj.arithmeticSymbolPos = arithmeticOpObj.memory.length;
     return true;
   }
+
   if (arithmeticOpObj.arithmeticSymbolPos != -1) {
-    // condition where the user presses another arithmetic symbol
+    // Arithmetic symbol already entered
+    if (symbol == "minus") {
+      return true;
+    }
+    if (
+      arithmeticOpObj.memory.length ==
+      arithmeticOpObj.arithmeticSymbolPos + 1
+    ) {
+      // This is the behaviour described in TOP assignment
+      arithmeticOpObj.memory.pop();
+
+      return true;
+    }
     arithmeticEquals();
 
     arithmeticOpObj.moveResultToMemory();
@@ -133,6 +146,7 @@ function arithmeticSymbolFilter(symbol) {
         arithmeticOpObj.memory,
     );
     arithmeticOpObj.result = 0;
+
     return true;
   }
 
