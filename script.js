@@ -220,6 +220,21 @@ function arithmeticEquals() {
   }
 }
 
+function processUndo() {
+  if (arithmeticOpObj.arithmeticSymbolPos == -1) {
+    arithmeticOpObj.memory = [];
+  }
+  if (arithmeticOpObj.arithmeticSymbolPos != -1) {
+    arithmeticOpObj.memory = arithmeticOpObj.memory.slice(
+      0,
+      arithmeticOpObj.arithmeticSymbolPos + 1,
+    );
+  }
+  let textOut =
+    arithmeticOpObj.memory.length == 0 ? "0" : arithmeticOpObj.memory.join("");
+  updateDisplayArea(textOut);
+}
+
 function processInputs(signal) {
   console.log("[processInputs] signal: " + signal);
   // Function to process all the inputs from the user
@@ -229,6 +244,11 @@ function processInputs(signal) {
     clearCalculationMemory();
     arithmeticOpObj.result = "";
     clearDisplay();
+    return;
+  }
+
+  if (signal == "backSpace") {
+    processUndo();
     return;
   }
 
@@ -270,9 +290,18 @@ function userKeyPress(event) {
   //   src: https://stackoverflow.com/questions/9907419/how-to-get-a-key-in-a-javascript-object-by-its-value
   let tmpVal = Object.keys(inputObj).find((key) => inputObj[key] === event.key);
 
+  // console.log("[userKeyPress] event.key: " + event.key);
+  // if (event.key === event.keyBackSpace) {
+  if (event.key === "Backspace") {
+    tmpVal = "backSpace";
+  }
+
   if (typeof tmpVal === "undefined") {
     console.log(
-      "[userKeyPress] exiting, no value to process, tmpVal: " + tmpVal,
+      "[userKeyPress] exiting, no value to process, tmpVal: " +
+        tmpVal +
+        ", event.key" +
+        event.key,
     );
     return;
   }
@@ -304,6 +333,7 @@ const inputObj = {
   multiplication: "x",
   division: "/",
   equals: "=",
+  undo: "backSpace",
 };
 const snarkyRemarks = [
   "Really?",
