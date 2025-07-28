@@ -265,32 +265,6 @@ function clickEntry(event) {
   processInputs(event.target.id);
 }
 
-const numberArray = [
-  "one",
-  "two",
-  "three",
-  "four",
-  "five",
-  "six",
-  "seven",
-  "eight",
-  "nine",
-  "zero",
-  "point",
-  "zeroZero",
-];
-const operatorArray = [
-  "equals",
-  "plus",
-  "minus",
-  "multiplication",
-  "division",
-  "clear",
-  "percentage",
-  "squareRoot",
-];
-
-const operatorsSymbol = ["-", "+", "x", "/"];
 const operatorsVerb = ["minus", "plus", "multiplication", "division"];
 const inputObj = {
   one: "1",
@@ -310,13 +284,6 @@ const inputObj = {
   multiplication: "x",
   division: "/",
   equals: "=",
-};
-
-const twoArgOperatorObj = {
-  plus: "+",
-  minus: "-",
-  multiplication: "x",
-  division: "/",
 };
 
 const arithmeticOpObj = {
