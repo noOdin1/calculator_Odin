@@ -158,6 +158,11 @@ function arithmeticSymbolFilter(symbol) {
   return false;
 }
 
+function displaySnarkyRemarks() {
+  let randnum = Math.floor(Math.random() * snarkyRemarks.length);
+  arithmeticOpObj.result = snarkyRemarks[randnum];
+}
+
 function arithmeticEquals() {
   arithmeticOpObj.showValues("arithmeticEquals");
   // This condition will not assume anything, but check for it
@@ -177,6 +182,13 @@ function arithmeticEquals() {
       arithmeticOpObj.arithmeticSymbolPos + 1,
     );
 
+    if (`${symbol}` === "/" && Number(arg2) === 0) {
+      // display snarky remark here
+      displaySnarkyRemarks();
+      clearCalculationMemory();
+
+      return;
+    }
     arg1 = arg1.join("");
     arg2 = arg2.join("");
     console.log(
@@ -293,6 +305,11 @@ const inputObj = {
   division: "/",
   equals: "=",
 };
+const snarkyRemarks = [
+  "Really?",
+  "..to infinity and beyond?",
+  "Crashed.. Not!",
+];
 
 const arithmeticOpObj = {
   memory: [],
