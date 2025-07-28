@@ -21,6 +21,8 @@ body {
   display: flex;
   flex-direction: column;
   margin: 20px auto;
+  background-color: #f2f2f3;
+  /* background-color: #c2c2c7; */
   border: 8px solid DarkSlateGray;
   border-style: outset;
   border-radius: 8px;
@@ -44,7 +46,8 @@ body {
   font-size: 28px;
   font-weight: 900;
   text-align: right;
-  background: LightGray;
+  /* background: LightGray; */
+  background-color: #c2c2c7;
   /* box-shadow: 5px 5px 5px Silver; */
   border-style: inset;
   text-shadow: 2px 2px 5px #1c1c2e;
