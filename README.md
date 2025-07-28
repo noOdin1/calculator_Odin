@@ -25,7 +25,7 @@ Assignment requirements:
 - [ done ] operate function
 - [ done ] buttons for all the inputs
 - [ done ] evaluate only a single pair of numbers at a time
-- [ ] round long decimals
+- [ done ] round long decimals
 - [ done ] clear button, clears all the input
 - [ ] display a snarky remark when 'divide by zero'
 - [ done ] pressing a new digit would begin a new calculation
