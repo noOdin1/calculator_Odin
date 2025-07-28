@@ -188,6 +188,11 @@ function arithmeticEquals() {
         arg2,
     );
     arithmeticOpObj.result = operate([arg1, `${symbol}`, arg2]);
+    // Add a decimal round here
+    arithmeticOpObj.result =
+      arithmeticOpObj.result % 1 !== 0
+        ? Number(arithmeticOpObj.result).toFixed(fixedDecimalPoints)
+        : arithmeticOpObj.result;
     clearCalculationMemory();
     console.log("[arithmeticEquals] result: " + arithmeticOpObj.result);
 
@@ -343,6 +348,7 @@ const arithmeticOpObj = {
   },
 };
 
+const fixedDecimalPoints = 4;
 const displayArea = document.querySelector(".operations");
 let docButtons = document.querySelectorAll("button");
 docButtons.forEach((btn) => btn.addEventListener("click", clickEntry));
