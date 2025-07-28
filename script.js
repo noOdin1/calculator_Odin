@@ -126,7 +126,10 @@ function arithmeticSymbolFilter(symbol) {
 
   if (arithmeticOpObj.arithmeticSymbolPos != -1) {
     // Arithmetic symbol already entered
-    if (symbol == "minus") {
+    if (
+      symbol == "minus" &&
+      arithmeticOpObj.arithmeticSymbolPos == arithmeticOpObj.memory.length - 1
+    ) {
       return true;
     }
     if (
