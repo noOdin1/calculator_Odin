@@ -18,3 +18,17 @@ script1.js
 script2.js
 The 2 files were the 2 separate solutions that I thought of as a solution to the
 calculator problem.
+
+Assignment requirements:
+
+- [ done ] 4 functions, add, substract, multiply, divide
+- [ done ] operate function
+- [ done ] buttons for all the inputs
+- [ done ] evaluate only a single pair of numbers at a time
+- [ ] round long decimals
+- [ done ] clear button, clears all the input
+- [ ] display a snarky remark when 'divide by zero'
+- [ done ] pressing a new digit would begin a new calculation
+- [ done ] stop more than 1 decimal point for each number
+- [ ] add a backspace button
+- [ done ] add keyboard support
