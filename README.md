@@ -16,7 +16,7 @@ objects in Javascript.
 The older codes will be saved in to 2 separate files,
 script1.js
 script2.js
-The 2 files were the 2 separate solutions that I thought of as a solution to the
+The 2 files were the 2 separate solutions that I thought of as for the
 calculator problem.
 
 Assignment requirements:
@@ -27,7 +27,7 @@ Assignment requirements:
 - [ done ] evaluate only a single pair of numbers at a time
 - [ done ] round long decimals
 - [ done ] clear button, clears all the input
-- [ ] display a snarky remark when 'divide by zero'
+- [ done ] display a snarky remark when 'divide by zero'
 - [ done ] pressing a new digit would begin a new calculation
 - [ done ] stop more than 1 decimal point for each number
 - [ ] add a backspace button
