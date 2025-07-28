@@ -29,6 +29,7 @@ Assignment requirements:
 - [ done ] clear button, clears all the input
 - [ done ] display a snarky remark when 'divide by zero'
 - [ done ] pressing a new digit would begin a new calculation
-- [ done ] stop more than 1 decimal point for each number
-- [ ] add a backspace button
+- [ done ] stop adding more than 1 decimal point for each number
+- [ done ] consecutive operators entered, take only the latest
+- [ done ] add a backspace button
 - [ done ] add keyboard support
