@@ -283,6 +283,9 @@ function processInputs(signal) {
 
     return;
   }
+  if (signal == "zeroZero") {
+    arithmeticOpObj.memory.push(inputObj[signal]);
+  }
 
   arithmeticOpObj.memory.push(inputObj[signal]);
 
