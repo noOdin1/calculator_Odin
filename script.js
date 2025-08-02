@@ -1,5 +1,8 @@
 function updateDisplayArea(displayStr) {
   console.log("[updateDisplayArea] displayStr: " + displayStr);
+  if (typeof displayStr === "string" && displayStr.includes("/")) {
+    displayStr = displayStr.replace("/", `${"÷"}`);
+  }
   displayArea.textContent = displayStr;
 }
 
