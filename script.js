@@ -3,6 +3,11 @@ function updateDisplayArea(displayStr) {
   if (typeof displayStr === "string" && displayStr.includes("/")) {
     displayStr = displayStr.replace("/", `${"÷"}`);
   }
+  if (displayStr.length > 28) {
+    displayStr = "Error, entry too long";
+    clearCalculationMemory();
+    arithmeticOpObj.result = "";
+  }
   displayArea.textContent = displayStr;
 }
 
