@@ -190,7 +190,7 @@ function arithmeticEquals() {
       arithmeticOpObj.arithmeticSymbolPos + 1,
     );
 
-    if (`${symbol}` === "/" && Number(arg2) === 0) {
+    if (`${symbol}` === "/" && Number(arg2.join("")) === 0) {
       // display snarky remark here
       displaySnarkyRemarks();
       clearCalculationMemory();
