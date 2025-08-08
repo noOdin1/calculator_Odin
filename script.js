@@ -32,24 +32,29 @@ function divide(num1, num2) {
 }
 
 function operate(eqArray) {
-  let num = 0;
-  switch (eqArray[1]) {
-    case "+":
-      num = add(eqArray[0], eqArray[2]);
-      break;
-    case "-":
-      num = substract(eqArray[0], eqArray[2]);
-      break;
-    case "x":
-      num = multiplication(eqArray[0], eqArray[2]);
-      break;
-    case "/":
-      num = divide(eqArray[0], eqArray[2]);
-      break;
-    default:
-  }
-
-  return num;
+  // let num = 0;
+  // switch (eqArray[1]) {
+  //   case "+":
+  //     num = add(eqArray[0], eqArray[2]);
+  //     break;
+  //   case "-":
+  //     num = substract(eqArray[0], eqArray[2]);
+  //     break;
+  //   case "x":
+  //     num = multiplication(eqArray[0], eqArray[2]);
+  //     break;
+  //   case "/":
+  //     num = divide(eqArray[0], eqArray[2]);
+  //     break;
+  //   default:
+  // }
+  //
+  // return num;
+  // Reduced switch case to the following line
+  return arithmeticFunctions[operatorSymbol.indexOf(eqArray[1])](
+    eqArray[0],
+    eqArray[2],
+  );
 }
 
 function clearDisplay() {
@@ -351,6 +356,9 @@ const snarkyRemarks = [
   "..to infinity and beyond?",
   "Crashed.. Not!",
 ];
+const operatorSymbol = ["-", "+", "x", "/"];
+// Example of how to use array of functions
+const arithmeticFunctions = [substract, add, multiplication, divide];
 
 const arithmeticOpObj = {
   memory: [],
